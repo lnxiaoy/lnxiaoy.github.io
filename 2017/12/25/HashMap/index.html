@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="lalaland">
 <meta property="og:description" content="调用hashmap的put方法时，会通过一个哈希函数来确定插入位置，有可能引起冲突，冲突时，在对应位置使用”头插法”插入链表,后被插入的Entry被找到的可能性更大调用hashmap的get方法时，通过哈希函数做映射，查找对应位置，如果有多个，则顺着链表一直向下查找 默认初始长度为16,每次自动扩展或者手动初始化都是2的幂，之所以是16,是因为key到index的hash算法要尽量均匀分布，通过利">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-25T02:30:09.651Z">
+<meta property="og:updated_time" content="2017-12-25T06:25:15.597Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HashMap">
 <meta name="twitter:description" content="调用hashmap的put方法时，会通过一个哈希函数来确定插入位置，有可能引起冲突，冲突时，在对应位置使用”头插法”插入链表,后被插入的Entry被找到的可能性更大调用hashmap的get方法时，通过哈希函数做映射，查找对应位置，如果有多个，则顺着链表一直向下查找 默认初始长度为16,每次自动扩展或者手动初始化都是2的幂，之所以是16,是因为key到index的hash算法要尽量均匀分布，通过利">
@@ -314,7 +314,7 @@
 <p>默认初始长度为16,每次自动扩展或者手动初始化都是2的幂，之所以是16,是因为key到index的hash算法要尽量均匀分布，通过利用key的hascode值和hashmap的长度做位运算。</p>
 <p>index = HashCode(Key) &amp; (Length - 1)</p>
 <p>hash最终的index结果几乎取决于Key的hascode后几位</p>
-<p>TODO:<br>    × 高并发下死锁<br>    × java8中的优化</p>
+<p>TODO:<br>    [  ] 高并发下死锁<br>    [  ] java8中的优化</p>
 
       
     </div>
