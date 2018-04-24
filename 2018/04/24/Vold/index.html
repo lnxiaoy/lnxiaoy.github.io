@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="###">
+<meta name="description" content="需求最近一直在做硬盘格式化的功能，有一天，突然有一个人找我说，我的硬盘插上去没反应了。。。，那咋办，查呀。发现硬盘不能挂载，然后接着查呀，发现硬盘挂载时候出错了。 123456789101104-23 11:04:27.367  3890  3932 V vold    : /dev/block/vold/public">
 <meta name="keywords" content="android vold">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vold">
 <meta property="og:url" content="http://lnxiaoy.github.io/2018/04/24/Vold/index.html">
 <meta property="og:site_name" content="lalaland">
-<meta property="og:description" content="###">
+<meta property="og:description" content="需求最近一直在做硬盘格式化的功能，有一天，突然有一个人找我说，我的硬盘插上去没反应了。。。，那咋办，查呀。发现硬盘不能挂载，然后接着查呀，发现硬盘挂载时候出错了。 123456789101104-23 11:04:27.367  3890  3932 V vold    : /dev/block/vold/public:8,2: UUID=&amp;quot;3337771922705DC0&amp;quot;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-24T11:12:36.000Z">
+<meta property="og:image" content="https://blog.csdn.net/yxwmzouzou/article/details/7931326">
+<meta property="og:updated_time" content="2018-04-24T12:57:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vold">
-<meta name="twitter:description" content="###">
+<meta name="twitter:description" content="需求最近一直在做硬盘格式化的功能，有一天，突然有一个人找我说，我的硬盘插上去没反应了。。。，那咋办，查呀。发现硬盘不能挂载，然后接着查呀，发现硬盘挂载时候出错了。 123456789101104-23 11:04:27.367  3890  3932 V vold    : /dev/block/vold/public:8,2: UUID=&amp;quot;3337771922705DC0&amp;quot;">
+<meta name="twitter:image" content="https://blog.csdn.net/yxwmzouzou/article/details/7931326">
 
 
 
@@ -310,7 +312,17 @@
       
 
       
-        <p>### </p>
+        <h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><p>最近一直在做硬盘格式化的功能，有一天，突然有一个人找我说，我的硬盘插上去没反应了。。。，那咋办，查呀。发现硬盘不能挂载，然后接着查呀，发现硬盘挂载时候出错了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">04-23 11:04:27.367  3890  3932 V vold    : /dev/block/vold/public:8,2: UUID=&quot;3337771922705DC0&quot; LABEL=&quot;h1&quot; TYPE=&quot;hfsplus&quot; </span><br><span class="line">04-23 11:04:27.367  3890  3932 V vold    : </span><br><span class="line">04-23 11:04:27.367  3890  3932 W vold    :  doMount, diskId is disk:8,0, mFsLabel is h1</span><br><span class="line">04-23 11:04:27.367  3890  3932 W vold    : mFsLabel is  setLabel OK</span><br><span class="line">04-23 11:04:27.367  3890  3932 W vold    : skipping hfsplus check</span><br><span class="line">04-23 11:04:27.368  4255  4292 D VoldConnector: RCV &lt;- &#123;652 public:8,2 hfsplus&#125;</span><br><span class="line">04-23 11:04:27.368  3890  3932 I vold    :  deviceType is hfsplus try to mount  mDevPath /dev/block/vold/public:8,2</span><br><span class="line">04-23 11:04:27.368  3890  3932 I vold    : flags 142ownerUid 1023 ownerGid 1023</span><br><span class="line">04-23 11:04:27.368  4255  4292 D VoldConnector: RCV &lt;- &#123;653 public:8,2 3337771922705DC0&#125;</span><br><span class="line">04-23 11:04:27.368  3890  3932 E vold    : /dev/block/vold/public:8,2 failed to mount via hfs+</span><br><span class="line">04-23 11:04:27.368  3890  3932 E vold    : public:8,2 failed to mount /dev/block/vold/public:8,2: No such device</span><br></pre></td></tr></table></figure>
+<p>发现文件系统是HFS+，这是啥东西呢？一顿百度之后发现是苹果电脑使用的文件系统，那就支持一下吧～</p>
+<h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><p>因为MBR分区表不支持2T以上的硬盘，所以目前格式化硬盘的分区表是GPT，但出于兼容性考虑，硬盘的第一个扇区仍然用作MBR，之后才是GPT头</p>
+<blockquote>
+<p>EFI(Extensible Firmware Interface 可扩展固件接口)</p>
+</blockquote>
+<p>由于BIOS发展缓慢，英特尔在安藤处理器上推出EFI技术，它突破传统16位代码的寻址能力，达到处理器的最大寻址。它利用加载EFI驱动的形式，识别及操作硬件，不同于BIOS利用挂载实模式中断的方式增加硬件功能，后者必须将一段类似于驱动的16位代码，放置在固定的0x000C0000至0x000DFFFF之间存储区中，运行这段代码的初始化部分，它将挂载实模式下约定的中断向量向其他程序提供服务</p>
+<p>！<a href="./gtp.jpg">GPT</a></p>
+<p>HFS+分区的GUID为<code>48465300-0000-11AA-AA11-00306543ECAC</code></p>
+<p><img src="https://blog.csdn.net/yxwmzouzou/article/details/7931326" alt="参考链接"></p>
 
       
     </div>
@@ -405,8 +417,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -459,6 +480,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#需求"><span class="nav-number">1.</span> <span class="nav-text">需求</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#准备工作"><span class="nav-number">1.1.</span> <span class="nav-text">准备工作</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
