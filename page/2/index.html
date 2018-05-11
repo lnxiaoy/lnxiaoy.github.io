@@ -242,6 +242,130 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://lnxiaoy.github.io/2018/03/03/nas/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lnxiaoy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lalaland">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/03/nas/" itemprop="url">nas项目总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-03T14:30:32+08:00">
+                2018-03-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="nas项目"><a href="#nas项目" class="headerlink" title="nas项目"></a>nas项目</h3><p>本人主要负责系统OTA的固件升级，修改厂测，集成CDN，格式化硬盘功能，在其中遇见很多问题，也一一解决了，先总结如下：</p>
+<h4 id="盒子带着硬盘上电启动，无法给出格式化提示"><a href="#盒子带着硬盘上电启动，无法给出格式化提示" class="headerlink" title="盒子带着硬盘上电启动，无法给出格式化提示"></a>盒子带着硬盘上电启动，无法给出格式化提示</h4><p>×解决方法×：由于硬盘插入时间过早，已经接收不到插入事件，只能通过在系统启动后扫描当前usb挂载情况。有的硬盘较大, 挂载时间较长，在apk启动后并没有检测到硬盘mount的状态，后通过延时启动sdk来保障硬盘状态是挂载好的时候进行扫描</p>
+<h4 id="格式化在sdk操作的时候，提示没有权限"><a href="#格式化在sdk操作的时候，提示没有权限" class="headerlink" title="格式化在sdk操作的时候，提示没有权限"></a>格式化在sdk操作的时候，提示没有权限</h4><p>×解决方法×：按照之前定的需求，sdk要完成硬盘格式化功能，格式化脚本选择系统的mkntfs.cpp，sdk代码为System(“mkntfs /dev/sda”), 运行在系统后，提示无权限执行，（1）尝试用Process.Runtime(“su”)提高权限，无效；（2）尝试给予操作的目录为system用户组，无效；（3）改为由java层通过mountService执行format</p>
+<h4 id="App间跨进程通信时机"><a href="#App间跨进程通信时机" class="headerlink" title="App间跨进程通信时机"></a>App间跨进程通信时机</h4><p>×解决方法×：使用AIDL做接口</p>
+<p>#### </p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://lnxiaoy.github.io/2018/03/03/2018-03-02/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1155,7 +1279,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
