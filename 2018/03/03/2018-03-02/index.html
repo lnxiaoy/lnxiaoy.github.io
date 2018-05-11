@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="lalaland">
 <meta property="og:description" content="2018年在上海的第一个元宵节古人有云：猿宵节是程序员在元宵佳节通宵加班的日子结果这一天还真是这个样子了，主要解决×so热更新的问题× so热更新目前应用结构为apk-&amp;gt;xxx.jar-&amp;gt;xxxJNI.so-&amp;gt;xxx.so，native层已经具备so的检查和下载，缺少的是so的替换过程，处理逻辑上  将上一个运行着的进程deinit，目前会崩溃 将新的so拷贝为一个位置（这个位置">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-03T06:17:17.434Z">
+<meta property="og:updated_time" content="2018-05-11T08:53:34.066Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="猿宵节">
 <meta name="twitter:description" content="2018年在上海的第一个元宵节古人有云：猿宵节是程序员在元宵佳节通宵加班的日子结果这一天还真是这个样子了，主要解决×so热更新的问题× so热更新目前应用结构为apk-&amp;gt;xxx.jar-&amp;gt;xxxJNI.so-&amp;gt;xxx.so，native层已经具备so的检查和下载，缺少的是so的替换过程，处理逻辑上  将上一个运行着的进程deinit，目前会崩溃 将新的so拷贝为一个位置（这个位置">
@@ -309,17 +309,26 @@
       
 
       
-        <h3 id="2018年在上海的第一个元宵节"><a href="#2018年在上海的第一个元宵节" class="headerlink" title="2018年在上海的第一个元宵节"></a>2018年在上海的第一个元宵节</h3><p>古人有云：<br><code>猿宵节是程序员在元宵佳节通宵加班的日子</code><br>结果这一天还真是这个样子了，主要解决×so热更新的问题×</p>
-<h4 id="so热更新"><a href="#so热更新" class="headerlink" title="so热更新"></a>so热更新</h4><p>目前应用结构为apk-&gt;xxx.jar-&gt;xxxJNI.so-&gt;xxx.so，native层已经具备so的检查和下载，缺少的是so的替换过程，处理逻辑上</p>
+        <h1 id="2018年在上海的第一个元宵节"><a href="#2018年在上海的第一个元宵节" class="headerlink" title="2018年在上海的第一个元宵节"></a>2018年在上海的第一个元宵节</h1><p>古人有云：<br><code>猿宵节是程序员在元宵佳节通宵加班的日子</code><br>结果这一天还真是这个样子了，主要解决×so热更新的问题×</p>
+<h2 id="so热更新"><a href="#so热更新" class="headerlink" title="so热更新"></a>so热更新</h2><p>目前应用结构为apk-&gt;xxx.jar-&gt;xxxJNI.so-&gt;xxx.so，native层已经具备so的检查和下载，缺少的是so的替换过程，处理逻辑上</p>
 <ol>
 <li>将上一个运行着的进程deinit，目前会崩溃</li>
 <li>将新的so拷贝为一个位置（这个位置有特定要求）</li>
 <li>重新init新的进程</li>
 </ol>
-<h4 id="so拷贝路径"><a href="#so拷贝路径" class="headerlink" title="so拷贝路径"></a>so拷贝路径</h4><ol>
-<li>将so拷贝到/data/data/包名下的cache文件夹内，重新调用so文件时，提醒system_app没有excute权限<br>解决办法：将so拷贝到外置存储目录Environment.Downloads下。</li>
-<li>重新调用so时，提示dlopen failed:不能调用so，调用路径只能为以下5个中的一个{/data, /system/lib/, /system/vendor/lib/, …}，有的没记住<br>解决办法：将so拷贝到/data/app_lib下，赋予权限</li>
-<li>重新调用so时，还是提示没有excute权限<br>解决办法：手动创建/data下的一个文件，赋予权限</li>
+<h2 id="so拷贝路径"><a href="#so拷贝路径" class="headerlink" title="so拷贝路径"></a>so拷贝路径</h2><ol>
+<li>将so拷贝到/data/data/包名下的cache文件夹内，重新调用so文件时，提醒system_app没有excute权限</li>
+</ol>
+<p>解决办法：将so拷贝到外置存储目录Environment.Downloads下。</p>
+<ol>
+<li>重新调用so时，提示dlopen failed:不能调用so，调用路径只能为以下5个中的一个{/data, /system/lib/, /system/vendor/lib/, …}，有的没记住</li>
+</ol>
+<p>解决办法：将so拷贝到/data/app_lib下，赋予权限</p>
+<ol>
+<li>重新调用so时，还是提示没有excute权限</li>
+</ol>
+<p>解决办法：手动创建/data下的一个文件，赋予权限</p>
+<ol>
 <li>依然无效后，通过log，找到app.te，在其中neverallow里将system_app从黑名单中删除，解决问题</li>
 </ol>
 
@@ -448,7 +457,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -483,7 +492,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#2018年在上海的第一个元宵节"><span class="nav-number">1.</span> <span class="nav-text">2018年在上海的第一个元宵节</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#so热更新"><span class="nav-number">1.1.</span> <span class="nav-text">so热更新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#so拷贝路径"><span class="nav-number">1.2.</span> <span class="nav-text">so拷贝路径</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2018年在上海的第一个元宵节"><span class="nav-number">1.</span> <span class="nav-text">2018年在上海的第一个元宵节</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#so热更新"><span class="nav-number">1.1.</span> <span class="nav-text">so热更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#so拷贝路径"><span class="nav-number">1.2.</span> <span class="nav-text">so拷贝路径</span></a></li></ol></li></ol></div>
             
 
           </div>

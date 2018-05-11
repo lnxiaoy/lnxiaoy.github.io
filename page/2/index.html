@@ -313,11 +313,10 @@
       
         
           
-            <h3 id="nas项目"><a href="#nas项目" class="headerlink" title="nas项目"></a>nas项目</h3><p>本人主要负责系统OTA的固件升级，修改厂测，集成CDN，格式化硬盘功能，在其中遇见很多问题，也一一解决了，先总结如下：</p>
-<h4 id="盒子带着硬盘上电启动，无法给出格式化提示"><a href="#盒子带着硬盘上电启动，无法给出格式化提示" class="headerlink" title="盒子带着硬盘上电启动，无法给出格式化提示"></a>盒子带着硬盘上电启动，无法给出格式化提示</h4><p>×解决方法×：由于硬盘插入时间过早，已经接收不到插入事件，只能通过在系统启动后扫描当前usb挂载情况。有的硬盘较大, 挂载时间较长，在apk启动后并没有检测到硬盘mount的状态，后通过延时启动sdk来保障硬盘状态是挂载好的时候进行扫描</p>
-<h4 id="格式化在sdk操作的时候，提示没有权限"><a href="#格式化在sdk操作的时候，提示没有权限" class="headerlink" title="格式化在sdk操作的时候，提示没有权限"></a>格式化在sdk操作的时候，提示没有权限</h4><p>×解决方法×：按照之前定的需求，sdk要完成硬盘格式化功能，格式化脚本选择系统的mkntfs.cpp，sdk代码为System(“mkntfs /dev/sda”), 运行在系统后，提示无权限执行，（1）尝试用Process.Runtime(“su”)提高权限，无效；（2）尝试给予操作的目录为system用户组，无效；（3）改为由java层通过mountService执行format</p>
-<h4 id="App间跨进程通信时机"><a href="#App间跨进程通信时机" class="headerlink" title="App间跨进程通信时机"></a>App间跨进程通信时机</h4><p>×解决方法×：使用AIDL做接口</p>
-<p>#### </p>
+            <h1 id="nas项目"><a href="#nas项目" class="headerlink" title="nas项目"></a>nas项目</h1><p>本人主要负责系统OTA的固件升级，修改厂测，集成CDN，格式化硬盘功能，在其中遇见很多问题，也一一解决了，先总结如下：</p>
+<h2 id="盒子带着硬盘上电启动，无法给出格式化提示"><a href="#盒子带着硬盘上电启动，无法给出格式化提示" class="headerlink" title="盒子带着硬盘上电启动，无法给出格式化提示"></a>盒子带着硬盘上电启动，无法给出格式化提示</h2><p>×解决方法×：由于硬盘插入时间过早，已经接收不到插入事件，只能通过在系统启动后扫描当前usb挂载情况。有的硬盘较大, 挂载时间较长，在apk启动后并没有检测到硬盘mount的状态，后通过延时启动sdk来保障硬盘状态是挂载好的时候进行扫描</p>
+<h2 id="格式化在sdk操作的时候，提示没有权限"><a href="#格式化在sdk操作的时候，提示没有权限" class="headerlink" title="格式化在sdk操作的时候，提示没有权限"></a>格式化在sdk操作的时候，提示没有权限</h2><p>×解决方法×：按照之前定的需求，sdk要完成硬盘格式化功能，格式化脚本选择系统的mkntfs.cpp，sdk代码为System(“mkntfs /dev/sda”), 运行在系统后，提示无权限执行，（1）尝试用Process.Runtime(“su”)提高权限，无效；（2）尝试给予操作的目录为system用户组，无效；（3）改为由java层通过mountService执行format</p>
+<h2 id="App间跨进程通信时机"><a href="#App间跨进程通信时机" class="headerlink" title="App间跨进程通信时机"></a>App间跨进程通信时机</h2><p>×解决方法×：使用AIDL做接口</p>
 
           
         
@@ -437,17 +436,26 @@
       
         
           
-            <h3 id="2018年在上海的第一个元宵节"><a href="#2018年在上海的第一个元宵节" class="headerlink" title="2018年在上海的第一个元宵节"></a>2018年在上海的第一个元宵节</h3><p>古人有云：<br><code>猿宵节是程序员在元宵佳节通宵加班的日子</code><br>结果这一天还真是这个样子了，主要解决×so热更新的问题×</p>
-<h4 id="so热更新"><a href="#so热更新" class="headerlink" title="so热更新"></a>so热更新</h4><p>目前应用结构为apk-&gt;xxx.jar-&gt;xxxJNI.so-&gt;xxx.so，native层已经具备so的检查和下载，缺少的是so的替换过程，处理逻辑上</p>
+            <h1 id="2018年在上海的第一个元宵节"><a href="#2018年在上海的第一个元宵节" class="headerlink" title="2018年在上海的第一个元宵节"></a>2018年在上海的第一个元宵节</h1><p>古人有云：<br><code>猿宵节是程序员在元宵佳节通宵加班的日子</code><br>结果这一天还真是这个样子了，主要解决×so热更新的问题×</p>
+<h2 id="so热更新"><a href="#so热更新" class="headerlink" title="so热更新"></a>so热更新</h2><p>目前应用结构为apk-&gt;xxx.jar-&gt;xxxJNI.so-&gt;xxx.so，native层已经具备so的检查和下载，缺少的是so的替换过程，处理逻辑上</p>
 <ol>
 <li>将上一个运行着的进程deinit，目前会崩溃</li>
 <li>将新的so拷贝为一个位置（这个位置有特定要求）</li>
 <li>重新init新的进程</li>
 </ol>
-<h4 id="so拷贝路径"><a href="#so拷贝路径" class="headerlink" title="so拷贝路径"></a>so拷贝路径</h4><ol>
-<li>将so拷贝到/data/data/包名下的cache文件夹内，重新调用so文件时，提醒system_app没有excute权限<br>解决办法：将so拷贝到外置存储目录Environment.Downloads下。</li>
-<li>重新调用so时，提示dlopen failed:不能调用so，调用路径只能为以下5个中的一个{/data, /system/lib/, /system/vendor/lib/, …}，有的没记住<br>解决办法：将so拷贝到/data/app_lib下，赋予权限</li>
-<li>重新调用so时，还是提示没有excute权限<br>解决办法：手动创建/data下的一个文件，赋予权限</li>
+<h2 id="so拷贝路径"><a href="#so拷贝路径" class="headerlink" title="so拷贝路径"></a>so拷贝路径</h2><ol>
+<li>将so拷贝到/data/data/包名下的cache文件夹内，重新调用so文件时，提醒system_app没有excute权限</li>
+</ol>
+<p>解决办法：将so拷贝到外置存储目录Environment.Downloads下。</p>
+<ol>
+<li>重新调用so时，提示dlopen failed:不能调用so，调用路径只能为以下5个中的一个{/data, /system/lib/, /system/vendor/lib/, …}，有的没记住</li>
+</ol>
+<p>解决办法：将so拷贝到/data/app_lib下，赋予权限</p>
+<ol>
+<li>重新调用so时，还是提示没有excute权限</li>
+</ol>
+<p>解决办法：手动创建/data下的一个文件，赋予权限</p>
+<ol>
 <li>依然无效后，通过log，找到app.te，在其中neverallow里将system_app从黑名单中删除，解决问题</li>
 </ol>
 
@@ -569,10 +577,10 @@
       
         
           
-            <h3 id="新年新气象"><a href="#新年新气象" class="headerlink" title="新年新气象"></a>新年新气象</h3><p>入职半年，转眼间就来到了2018年，上学的日子9点起，上班的时候七点起，是什么让我能如此勤奋，是责任吗？是爱吗？不，是钱诱惑着我。不上班就没有钱，为了以后能买买买，今天就要上上班。</p>
+            <h1 id="新年新气象"><a href="#新年新气象" class="headerlink" title="新年新气象"></a>新年新气象</h1><p>入职半年，转眼间就来到了2018年，上学的日子9点起，上班的时候七点起，是什么让我能如此勤奋，是责任吗？是爱吗？不，是钱诱惑着我。不上班就没有钱，为了以后能买买买，今天就要上上班。</p>
 <p>刚毕业那前的想法是，我还年轻，我还想出去看看，我不能在我上学七年的地方呆着，心有不甘啊。然后呢，就凭着这个想法来到了上海，上海这地方确实好，好东西多，好玩的也多，虽然物价能贵一点，姑且还算可以承受吧。。。尤其是迪士尼，正版的就是不一样，一个花车就能让你感受到童话般的故事带来的魅力。话说回来，体验了半年，尤其讨厌排队，好吃的排队我就忍了，看病排号我也忍了，就是忍不了上个电梯都要排队。。。上海好是好，也有贫民窟，不太适合居住，住不起。。。都给10年前，20年前来奋斗的人买单了。</p>
 <p>现在的想法是-就目前的情况而言，在上海等着落户是不现实的，也等不起，这样就只能让我换个地方生活，我选择杭州！趁着2018年政策没那么紧张的时候，赶上最后一班车，那么，是时候写简历去了。</p>
-<h4 id="新年愿望"><a href="#新年愿望" class="headerlink" title="新年愿望"></a>新年愿望</h4><p>想要安定下来，找个能落户的地方，这个是刚需<br>买个房子，想买个大的140左右<br>结婚～～～</p>
+<h2 id="新年愿望"><a href="#新年愿望" class="headerlink" title="新年愿望"></a>新年愿望</h2><p>想要安定下来，找个能落户的地方，这个是刚需<br>买个房子，想买个大的140左右<br>结婚～～～</p>
 <p>今天是开工第一天，很开心，发了500元红包，加强技术，早日成为大牛</p>
 
           
@@ -693,7 +701,7 @@
       
         
           
-            <h3 id="事件回顾"><a href="#事件回顾" class="headerlink" title="事件回顾"></a>事件回顾</h3><ol>
+            <h1 id="事件回顾"><a href="#事件回顾" class="headerlink" title="事件回顾"></a>事件回顾</h1><ol>
 <li>王思聪冲顶大会：我撒币，我开心，我捡币，我乐意</li>
 <li>区块链各种百花齐放</li>
 </ol>
@@ -816,11 +824,11 @@
       
         
           
-            <p>调用hashmap的put方法时，会通过一个哈希函数来确定插入位置，有可能引起冲突，冲突时，在对应位置使用”头插法”插入链表,后被插入的Entry被找到的可能性更大<br>调用hashmap的get方法时，通过哈希函数做映射，查找对应位置，如果有多个，则顺着链表一直向下查找</p>
+            <h1 id="hashMap"><a href="#hashMap" class="headerlink" title="hashMap"></a>hashMap</h1><p>调用hashmap的put方法时，会通过一个哈希函数来确定插入位置，有可能引起冲突，冲突时，在对应位置使用”头插法”插入链表,后被插入的Entry被找到的可能性更大<br>调用hashmap的get方法时，通过哈希函数做映射，查找对应位置，如果有多个，则顺着链表一直向下查找</p>
 <p>默认初始长度为16,每次自动扩展或者手动初始化都是2的幂，之所以是16,是因为key到index的hash算法要尽量均匀分布，通过利用key的hascode值和hashmap的长度做位运算。</p>
 <p>index = HashCode(Key) &amp; (Length - 1)</p>
 <p>hash最终的index结果几乎取决于Key的hascode后几位</p>
-<p>TODO:<br>    [  ] 高并发下死锁<br>    [  ] java8中的优化</p>
+<p>TODO：<br>    [  ] 高并发下死锁<br>    [  ] java8中的优化</p>
 
           
         
@@ -940,10 +948,10 @@
       
         
           
-            <h3 id="Another-ToughDay-AnHa"><a href="#Another-ToughDay-AnHa" class="headerlink" title="Another ToughDay AnHa?"></a>Another ToughDay AnHa?</h3><blockquote>
+            <h1 id="Another-ToughDay-AnHa"><a href="#Another-ToughDay-AnHa" class="headerlink" title="Another ToughDay AnHa?"></a>Another ToughDay AnHa?</h1><blockquote>
 <p>一到过节就有活动， 一有活动就要加班, 雪雪已经被整得不要不要的了</p>
 </blockquote>
-<h4 id="Need-To-Do"><a href="#Need-To-Do" class="headerlink" title="Need To Do"></a>Need To Do</h4><p>[  ] 设计模式<br>[  ] 多线程安全<br>[  ] 序列化</p>
+<h2 id="Need-To-Do"><a href="#Need-To-Do" class="headerlink" title="Need To Do"></a>Need To Do</h2><p>[  ] 设计模式<br>[  ] 多线程安全<br>[  ] 序列化</p>
 
           
         
@@ -1063,7 +1071,7 @@
       
         
           
-            <h3 id="美食"><a href="#美食" class="headerlink" title="美食"></a>美食</h3><p>突然好想吃孜然牛肉啊啊～～～</p>
+            <h1 id="美食"><a href="#美食" class="headerlink" title="美食"></a>美食</h1><p>突然好想吃孜然牛肉啊啊～～～</p>
 
           
         
@@ -1183,17 +1191,17 @@
       
         
           
-            <h3 id="分叉口"><a href="#分叉口" class="headerlink" title="分叉口"></a>分叉口</h3><p>机顶盒的项目已经完成了，今天交给工厂生产了，后续有什么样的工作不是很清楚，目前摆在我前面的有两条路</p>
+            <h1 id="分叉口"><a href="#分叉口" class="headerlink" title="分叉口"></a>分叉口</h1><p>机顶盒的项目已经完成了，今天交给工厂生产了，后续有什么样的工作不是很清楚，目前摆在我前面的有两条路</p>
 <ol>
 <li>跟着这群人继续做<code>投影仪</code>，个人没看好，有个叨逼叨的一天也闹心</li>
 <li>留下来维护机顶盒的项目，学习学习，随时准备撤退</li>
 </ol>
 <p>人生真是充满了选择…</p>
-<h4 id="后续工作"><a href="#后续工作" class="headerlink" title="后续工作"></a>后续工作</h4><ul>
+<h2 id="后续工作"><a href="#后续工作" class="headerlink" title="后续工作"></a>后续工作</h2><ul>
 <li>完善逻辑，优化代码，该封装的封装，该归类的归类，虽然我现在也不会</li>
 <li>看看书吧</li>
 </ul>
-<h4 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h4><p>准备把写博客和锻炼的事情提上日程，没有一个好的身体和技术，是不行滴！</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>准备把写博客和锻炼的事情提上日程，没有一个好的身体和技术，是不行滴！</p>
 
           
         
@@ -1292,7 +1300,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
