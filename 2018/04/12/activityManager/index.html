@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="ActivityManager使用在android设备命令行通常使用am来启动service，activity，发送广播等  $ am start/startservice -n ｛包名｝/｛包名｝.{活动名称} 如：启动一个名叫MainActivity的活动 am start -n com.example.test/">
+<meta name="description" content="ActivityManager使用在android设备命令行通常使用am来启动service，activity，发送广播等  $ am start/startservice -n ｛包名｝/｛包名｝.{活动名称}   如：启动一个名叫MainActivity的活动  1am start -n com.example.t">
 <meta name="keywords" content="android am">
 <meta property="og:type" content="article">
 <meta property="og:title" content="activityManager">
 <meta property="og:url" content="http://lnxiaoy.github.io/2018/04/12/activityManager/index.html">
 <meta property="og:site_name" content="lalaland">
-<meta property="og:description" content="ActivityManager使用在android设备命令行通常使用am来启动service，activity，发送广播等  $ am start/startservice -n ｛包名｝/｛包名｝.{活动名称} 如：启动一个名叫MainActivity的活动 am start -n com.example.test/com.example.test.MainActivity  如果想要Inten">
+<meta property="og:description" content="ActivityManager使用在android设备命令行通常使用am来启动service，activity，发送广播等  $ am start/startservice -n ｛包名｝/｛包名｝.{活动名称}   如：启动一个名叫MainActivity的活动  1am start -n com.example.test/com.example.test.MainActivity 如果想要In">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-11T08:53:28.000Z">
+<meta property="og:updated_time" content="2018-05-22T07:57:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="activityManager">
-<meta name="twitter:description" content="ActivityManager使用在android设备命令行通常使用am来启动service，activity，发送广播等  $ am start/startservice -n ｛包名｝/｛包名｝.{活动名称} 如：启动一个名叫MainActivity的活动 am start -n com.example.test/com.example.test.MainActivity  如果想要Inten">
+<meta name="twitter:description" content="ActivityManager使用在android设备命令行通常使用am来启动service，activity，发送广播等  $ am start/startservice -n ｛包名｝/｛包名｝.{活动名称}   如：启动一个名叫MainActivity的活动  1am start -n com.example.test/com.example.test.MainActivity 如果想要In">
 
 
 
@@ -312,10 +312,14 @@
       
         <h1 id="ActivityManager使用"><a href="#ActivityManager使用" class="headerlink" title="ActivityManager使用"></a>ActivityManager使用</h1><p>在android设备命令行通常使用am来启动service，activity，发送广播等</p>
 <blockquote>
-<p>$ am start/startservice -n ｛包名｝/｛包名｝.{活动名称}<br> 如：启动一个名叫MainActivity的活动<br> am start -n com.example.test/com.example.test.MainActivity</p>
+<p>$ am start/startservice -n ｛包名｝/｛包名｝.{活动名称}</p>
 </blockquote>
+<p> 如：启动一个名叫MainActivity的活动</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">am start -n com.example.test/com.example.test.MainActivity</span><br></pre></td></tr></table></figure>
 <p>如果想要Intent带参数的话</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">am start -n xxxxx --es city "shanghai" --ei year 2018 --ez flag true</span><br></pre></td></tr></table></figure>
+<p>启动内置设置</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">am start -a android.settings.SETTINGS</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -434,7 +438,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -447,7 +451,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
