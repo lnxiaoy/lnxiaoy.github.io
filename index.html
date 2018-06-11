@@ -242,6 +242,287 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://lnxiaoy.github.io/2018/06/11/classLoader/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lnxiaoy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lalaland">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/11/classLoader/" itemprop="url">classLoader</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-11T10:17:06+08:00">
+                2018-06-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="java类加载"><a href="#java类加载" class="headerlink" title="java类加载"></a>java类加载</h1><p>1、加载</p>
+<p>加载是类装载的第一步，首先通过class文件的路径读取到二进制流，并解析二进制流将里面的元数据（类型、常量等）载入到方法区，在java堆中生成对应的java.lang.Class对象。</p>
+<p>2、连接</p>
+<p>连接过程又分为3步，验证、准备、解析</p>
+<p>2.1、验证</p>
+<p>验证的主要目的就是判断class文件的合法性，比如class文件一定是以0xCAFEBABE开头的，另外对版本号也会做验证，例如如果使用java1.8编译后的class文件要再java1.6虚拟机上运行，因为版本问题就会验证不通过。除此之外还会对元数据、字节码进行验证，具体的验证过程就复杂的多了，可以专门查看相关资料去了解。</p>
+<p>2.2、准备</p>
+<p>准备过程就是分配内存，给类的一些字段设置初始值，例如：</p>
+<p>public static int v=1;</p>
+<p>这段代码在准备阶段v的值就会被初始化为0，只有到后面类初始化阶段时才会被设置为1。</p>
+<p>但是对于static final（常量），在准备阶段就会被设置成指定的值，例如：</p>
+<p>public static final  int v=1;</p>
+<p>这段代码在准备阶段v的值就是1。</p>
+<p>2.3、解析</p>
+<p>解析过程就是将符号引用替换为直接引用，例如某个类继承java.lang.object，原来的符号引用记录的是“java.lang.object”这个符号，凭借这个符号并不能找到java.lang.object这个对象在哪里？而直接引用就是要找到java.lang.object所在的内存地址，建立直接引用关系，这样就方便查询到具体对象。</p>
+<p>3、初始化</p>
+<p>初始化过程，主要包括执行类构造方法、static变量赋值语句，staic{}语句块，需要注意的是如果一个子类进行初始化，那么它会事先初始化其父类，保证父类在子类之前被初始化。所以其实在java中初始化一个类，那么必然是先初始化java.lang.Object，因为所有的java类都继承自java.lang.Object。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://lnxiaoy.github.io/2018/06/08/ddu/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lnxiaoy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lalaland">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/08/ddu/" itemprop="url">Day Day Up</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-08T09:14:17+08:00">
+                2018-06-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="jVM"><a href="#jVM" class="headerlink" title="jVM"></a>jVM</h1><p><img src="/img/jvm.png" alt="jvm"></p>
+<blockquote>
+<p>JVM是可运行Java代码的假想计算机 ，包括一套字节码指令集、一组寄存器、一个栈、一个垃圾回收，堆 和 一个存储方法域。JVM是运行在操作系统之上的，它与硬件没有直接的交互</p>
+</blockquote>
+<h2 id="JVM内存空间"><a href="#JVM内存空间" class="headerlink" title="JVM内存空间"></a>JVM内存空间</h2><p>JVM内存空间包含：方法区、java堆、java栈、本地方法栈。</p>
+<p>方法区是各个线程共享的区域，存放类信息、常量、静态变量。</p>
+<p>java堆也是线程共享的区域，我们的类的实例就放在这个区域，可以想象你的一个系统会产生很多实例，因此java堆的空间也是最大的。如果java堆空间不足了，程序会抛出OutOfMemoryError异常。</p>
+<p>java栈是每个线程私有的区域，它的生命周期与线程相同，一个线程对应一个java栈，每执行一个方法就会往栈中压入一个元素，这个元素叫“栈帧”，而栈帧中包括了方法中的局部变量、用于存放中间状态值的操作栈，这里面有很多细节，我们以后再讲。如果java栈空间不足了，程序会抛出StackOverflowError异常，想一想什么情况下会容易产生这个错误，对，递归，递归如果深度很深，就会执行大量的方法，方法越多java栈的占用空间越大。</p>
+<p>本地方法栈角色和java栈类似，只不过它是用来表示执行本地方法的，本地方法栈存放的方法调用本地方法接口，最终调用本地方法库，实现与操作系统、硬件交互的目的。</p>
+<p>PC寄存器，说到这里我们的类已经加载了，实例对象、方法、静态变量都去了自己改去的地方，那么问题来了，程序该怎么执行，哪个方法先执行，哪个方法后执行，这些指令执行的顺序就是PC寄存器在管，它的作用就是控制程序指令的执行顺序。</p>
+<h2 id="JVM内存可见性"><a href="#JVM内存可见性" class="headerlink" title="JVM内存可见性"></a>JVM内存可见性</h2><p>解决问题：线程2通过改变变量值控制线程1的执行，会出现意想不到的问题<br>解决办法：加入<code>volatile</code>后，保证内存可见性，原理由硬件支持</p>
+<h2 id="指令重排序"><a href="#指令重排序" class="headerlink" title="指令重排序"></a>指令重排序</h2><p>加入内存屏障，Volatile相当于synchronized的一个弱实现，他实现了synchronized的语义却没有锁机制</p>
+<h2 id="GC回收算法"><a href="#GC回收算法" class="headerlink" title="GC回收算法"></a>GC回收算法</h2><p><code>“stop the world”</code> 每次执行GC时，会暂停java程序的执行，所以有时候程序一卡一卡的</p>
+<ol>
+<li>引用计数法（弃用）：影响性能，无法解决循环引用的问题</li>
+<li>标记清除：遍历所有节点，标记所有可达对象，未标记的会被清楚；遍历性能低，留下来的内存不连续</li>
+<li>标记压缩：对内存空间进行压缩，节省内存空间，解决了标记清除算法内存不连续的问题。</li>
+<li>复制算法：往往用于内存空间中新生代的垃圾回收，因为新生代中存活对象较少，复制成本较低。</li>
+</ol>
+<h2 id="java堆内存结构"><a href="#java堆内存结构" class="headerlink" title="java堆内存结构"></a>java堆内存结构</h2><p>java堆内存结构包括：新生代和老年代，其中新生代由一个伊甸区和2个幸存区组成，2个幸存区是大小相同，完全对称的，没有任何差别。我们把它们称为S0区和S1区，也可以称为from区和to区。</p>
+<ol>
+<li>串行收集器：使用单线程进行垃圾回收。对新生代的回收使用复制算法，对老年代使用标记压缩算法</li>
+<li>并行收集器：使用多线程进行垃圾回收。</li>
+<li>CMS回收器：Concurrent Mark Sweep，并发标记清除。CMS的优点显而易见，就是减少了应用程序的停顿时间，让回收线程和应用程序线程可以并发执行。但它也不是完美的，从他的运行机制可以看出，因为它不像其他回收器一样集中一段时间对垃圾进行回收，并且在回收时应用程序还是运行，因此它的回收并不彻底。这也导致了CMS回收的频率相较其他回收器要高，频繁的回收将影响应用程序的吞吐量。CMS只适用于老年代</li>
+<li>G1回收器：Garbage First</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://lnxiaoy.github.io/2018/06/05/sanya/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1376,256 +1657,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://lnxiaoy.github.io/2018/04/11/socket/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="lnxiaoy">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="lalaland">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/11/socket/" itemprop="url">socket</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-11T10:30:19+08:00">
-                2018-04-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="网络编程"><a href="#网络编程" class="headerlink" title="网络编程"></a>网络编程</h1><p>在进行网络编程，文件下载的时候，遇见了以下问题，记录一下，框架使用okHttp3</p>
-<h2 id="java-net-SocketException-Socket-is-closed"><a href="#java-net-SocketException-Socket-is-closed" class="headerlink" title="java.net.SocketException: Socket is closed"></a>java.net.SocketException: Socket is closed</h2><blockquote>
-<p>该异常在客户端和服务器均可能发生。异常的原因是己方主动关闭了连接后（调用了Socket的close方法）再对网络连接进行读写操作。</p>
-</blockquote>
-<p>在有多个服务的系统中，发现如果有别的服务打开过socket链接，在链接服务器不成功的情况下，退出并关闭了socket链接，有可能是我正在使用的端口，×端口有没有可能共享×，或者只要保证【Server IP + Server Port + Client IP + Client Port】这个组合唯一不重复即可。</p>
-<h2 id="Exception-Unexpected-end-of-Stream"><a href="#Exception-Unexpected-end-of-Stream" class="headerlink" title="Exception: Unexpected end of Stream"></a>Exception: Unexpected end of Stream</h2><p>客户端中读取到的字节为0,考虑服务器中断了，CDN节点切换了等导致网络不畅</p>
-<h2 id="java-net-ConnectException-Connection-refused"><a href="#java-net-ConnectException-Connection-refused" class="headerlink" title="java.net.ConnectException: Connection refused"></a>java.net.ConnectException: Connection refused</h2><p>访问服务器给定的地址，链接被拒绝了，考虑服务器暂停了这个服务</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>使用okHttp框架，添加</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> OkHttpClient <span class="title">getmClient</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (mOkHttpClinet == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">synchronized</span> (OkHttpClientHelper.class) &#123;</span><br><span class="line">                <span class="keyword">if</span> (mOkHttpClinet == <span class="keyword">null</span>) &#123;</span><br><span class="line">                    OkHttpClient.Builder mBuilder = <span class="keyword">new</span> OkHttpClient.Builder();</span><br><span class="line">                    mBuilder.sslSocketFactory(createSSLSocketFactory(), <span class="keyword">new</span> TrustAllCerts());</span><br><span class="line">                    mBuilder.retryOnConnectionFailure(<span class="keyword">true</span>);</span><br><span class="line">                    mBuilder.addNetworkInterceptor(<span class="keyword">new</span> Interceptor() &#123;</span><br><span class="line">                        <span class="meta">@Override</span></span><br><span class="line">                        <span class="function"><span class="keyword">public</span> Response <span class="title">intercept</span><span class="params">(Chain chain)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">                            Request request = chain.request().newBuilder().addHeader(<span class="string">"Connection"</span>, <span class="string">"close"</span>).build();</span><br><span class="line">                            <span class="keyword">return</span> chain.proceed(request);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;);</span><br><span class="line">                    mBuilder.hostnameVerifier(<span class="keyword">new</span> TrustAllHostnameVerifier());</span><br><span class="line">                    mOkHttpClinet = mBuilder.build();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        LogUtils.d(TAG, <span class="string">"Single OkHttpClient"</span>);</span><br><span class="line">        <span class="keyword">return</span> mOkHttpClinet;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>也不能进行重试，只能放在try catch里捕捉进行手动重试了。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://lnxiaoy.github.io/2018/03/20/dns/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="lnxiaoy">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="lalaland">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/20/dns/" itemprop="url">android刷新dns缓存</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-20T09:05:04+08:00">
-                2018-03-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="查看dns信息"><a href="#查看dns信息" class="headerlink" title="查看dns信息"></a>查看dns信息</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nslookup xxxx.com</span><br></pre></td></tr></table></figure>
-<h2 id="刷新缓存"><a href="#刷新缓存" class="headerlink" title="刷新缓存"></a>刷新缓存</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//开启飞行模式</span></span><br><span class="line">settings put global airplane_mode_on <span class="number">1</span></span><br><span class="line">am broadcast -a android.intent.action.AIRPLANE_MODE --ez state <span class="keyword">true</span></span><br><span class="line"><span class="comment">//关闭飞行模式</span></span><br><span class="line">settings put global airplane_mode_on <span class="number">0</span></span><br><span class="line">am broadcast -a android.intent.action.AIRPLANE_MODE --ez state <span class="keyword">false</span></span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1676,7 +1707,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1689,7 +1720,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
