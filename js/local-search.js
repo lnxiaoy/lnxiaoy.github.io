@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let datas;
   let isXml = true;
   // Search DB path
-  let searchPath = CONFIG.path;
+  let searchPath = "/search.xml"; //CONFIG.search.path
   if (searchPath.length === 0) {
     searchPath = 'search.xml';
   } else if (searchPath.endsWith('json')) {
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const resultContent = document.getElementById('search-result');
 
   const getIndexByWord = (word, text, caseSensitive) => {
-    if (CONFIG.localsearch.unescape) {
+    if (false) { // CONFIG.localsearch.unescape = false
       let div = document.createElement('div');
       div.innerText = word;
       word = div.innerHTML;
@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
           });
 
           // Select top N slices in content
-          let upperBound = parseInt(CONFIG.localsearch.top_n_per_article, 10);
+          let upperBound = parseInt(1, 10); // CONFIG.localsearch.top_n_per_article: 1
           if (upperBound >= 0) {
             slicesOfContent = slicesOfContent.slice(0, upperBound);
           }
@@ -169,9 +169,9 @@ document.addEventListener('DOMContentLoaded', () => {
           let resultItem = '';
 
           if (slicesOfTitle.length !== 0) {
-            resultItem += `<li><a href="${url}" class="search-result-title">${highlightKeyword(title, slicesOfTitle[0])}</a>`;
+            resultItem += `<li class="search-result-element"><a href="${url}" class="search-result-title">${highlightKeyword(title, slicesOfTitle[0])}</a>`;
           } else {
-            resultItem += `<li><a href="${url}" class="search-result-title">${title}</a>`;
+            resultItem += `<li class="search-result-element"><a href="${url}" class="search-result-title">${title}</a>`;
           }
 
           slicesOfContent.forEach(slice => {
@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const fetchData = () => {
-    fetch(CONFIG.root + searchPath)
+    fetch('' + searchPath) // CONFIG.root = ''
       .then(response => response.text())
       .then(res => {
         // Get the contents from search data
@@ -232,11 +232,11 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   };
 
-  if (CONFIG.localsearch.preload) {
+  if (false) { // CONFIG.localsearch.preload: false
     fetchData();
   }
 
-  if (CONFIG.localsearch.trigger === 'auto') {
+  if ('auto' === 'auto') { // CONFIG.localsearch.trigger: 'auto' / 'manual'
     input.addEventListener('input', inputEventFunction);
   } else {
     document.querySelector('.search-icon').addEventListener('click', inputEventFunction);

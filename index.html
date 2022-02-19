@@ -1,1165 +1,487 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="lnxiaoy&#39;s blog">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      lalaland
+    
+  </title>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  
+<link rel="stylesheet" href="/css/style.css">
 
-<link rel="stylesheet" href="/css/main.css">
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+  
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
 
-
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
-  </script>
-
-  <meta property="og:type" content="website">
-<meta property="og:title" content="lalaland">
-<meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="lalaland">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="lnxiaoy">
-<meta name="twitter:card" content="summary">
-
-<link rel="canonical" href="http://example.com/">
-
-
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : true,
-    isPost : false,
-    lang   : 'en'
-  };
-</script>
-
-  <title>lalaland</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
   
 
 
+  
+  
+    
+<script src="/js/local-search.js"></script>
 
 
-
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">lalaland</h1>
-      <span class="logo-line-after"><i></i></span>
+<meta name="generator" content="Hexo 5.4.0"></head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>lalaland</span>
     </a>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-    </div>
-  </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
-
-  </li>
-  </ul>
-</nav>
-
-
-
-
-</div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
+    <ul class="right-list">
+      
+        <li class="list-item">
           
-
-          <div class="content index posts-expand">
+            <a href="/" class="item-link active">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/series/" class="item-link">Series</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+      
+        <li class="menu-item menu-item-search right-list">
+    <a role="button" class="popup-trigger">
+        <i class="fa fa-search fa-fw"></i>
+    </a>
+</li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
             
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/13/2022/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="lnxiaoy">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="lalaland">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/02/13/2022/" class="post-title-link" itemprop="url">2022工作计划</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-02-13 18:08:09 / Modified: 18:13:19" itemprop="dateCreated datePublished" datetime="2022-02-13T18:08:09+08:00">2022-02-13</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="2022计划"><a href="#2022计划" class="headerlink" title="2022计划"></a>2022计划</h3><ol>
-<li>求婚</li>
-</ol>
-<p>三亚酒店求婚，待规划</p>
-<ol start="2">
-<li>结婚</li>
-</ol>
-<p>5.8 细节详见number</p>
-<ol start="3">
-<li>健身</li>
-</ol>
-<p>俯卧撑10*4组</p>
-<ol start="4">
-<li>买房</li>
-</ol>
-<p>根据首付款和积分上限来综合考虑，现在倾向于虹桥、虹桥前湾、杨浦</p>
-<ol start="5">
-<li>买车</li>
-</ol>
-<p>Volvo S60</p>
-<ol start="6">
-<li>投资</li>
-</ol>
-<p>保持银行固守短债理财，停止基金投入，寻找潜力股股票</p>
-<ol start="7">
-<li>刷题</li>
-</ol>
-<p>保持leetcode刷题进度</p>
-<ol start="8">
-<li>工作</li>
-</ol>
-<p>寻找新的赛道，提高薪资待遇</p>
-<ol start="9">
-<li>副业</li>
-</ol>
-<p>寻找一份副业来满足日常开销（滴滴？）</p>
-
-      
+              <a href="/" class="menu-link mobile-active">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/series/" class="menu-link">Series</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
     </div>
-
     
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/13/work/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="lnxiaoy">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="lalaland">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/02/13/work/" class="post-title-link" itemprop="url">工作</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-02-13 18:06:24 / Modified: 18:07:32" itemprop="dateCreated datePublished" datetime="2022-02-13T18:06:24+08:00">2022-02-13</time>
+      <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+            <span class="search-icon">
+                <i class="fa fa-search"></i>
             </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>2022年寻找新的工作机会，挑选产业和行业，进入一条快车道</p>
-<h4 id="公司"><a href="#公司" class="headerlink" title="公司"></a>公司</h4><ol>
-<li>高通：软开，测试</li>
-<li>英特尔：基带</li>
-<li>苹果：开发</li>
-<li>小米：物理层算法</li>
-<li>zheku：wlan算法</li>
-<li>中兴：</li>
-<li>三星：13.5+2月年终奖+2.5加班费</li>
-<li>AMD：</li>
-<li>亚马逊：</li>
-<li>博通：</li>
-<li>乐鑫科技：wlan算法，iot</li>
-<li>中芯国际</li>
-</ol>
-<h4 id="领域"><a href="#领域" class="headerlink" title="领域"></a>领域</h4><p>整理phy领域知识，有计划，有步骤的进行<br>行业洞察：制造业8%，AI视觉/人工智能</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/01/hunli/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="lnxiaoy">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="lalaland">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/02/01/hunli/" class="post-title-link" itemprop="url">婚礼筹备</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-02-01 11:10:47 / Modified: 11:11:03" itemprop="dateCreated datePublished" datetime="2022-02-01T11:10:47+08:00">2022-02-01</time>
+            <div class="search-input-container">
+                <input autocomplete="off" autocapitalize="off"
+                    placeholder="Please enter your keyword(s) to search." spellcheck="false"
+                    type="search" class="search-input">
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
             </span>
-
-          
-
         </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/01/baiduwiki/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="lnxiaoy">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="lalaland">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/02/01/baiduwiki/" class="post-title-link" itemprop="url">百度网盘wiki</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-02-01 09:30:21 / Modified: 11:06:53" itemprop="dateCreated datePublished" datetime="2022-02-01T09:30:21+08:00">2022-02-01</time>
-            </span>
-
-          
-
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
         </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>后网盘时代下，大文件的分享和传递基本还是几大主流厂商来提供，百度，阿里等。目前阿里网盘使用人数不多，资源种类不够丰富，留着备用。百度网盘限速诟病已久，在工信部的要求下，仍然吃相难看（青春版三次下载机会，空间10G）。需要高级手段来方便自己下载，黑科技并不提倡，请大家支持正版。</p>
-<h3 id="百度网盘"><a href="#百度网盘" class="headerlink" title="百度网盘"></a>百度网盘</h3><ol>
-<li><a target="_blank" rel="noopener" href="https://www.baiduyun.wiki/">油猴脚本</a></li>
-<li>用户脚本</li>
-<li>XDown下载器</li>
-<li>Chrome浏览器</li>
-</ol>
-<p>原理：通过技术手段获取直链链接，多线程下载</p>
-<h3 id="阿里网盘"><a href="#阿里网盘" class="headerlink" title="阿里网盘"></a>阿里网盘</h3><p><a target="_blank" rel="noopener" href="https://www.alipansou.com/">阿里盘搜</a></p>
-
-      
     </div>
+</div>
+    
+  </div>
+</header>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
+    <main class="app-body">
   
-  
-  
-
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2022/02/13/2022/">2022工作计划</a>
+      </h2>
+      <p class="article-date">February 13, 2022</p>
       
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/24/shuati/">
+      <div class="article-summary">
+        
+          2022计划
+求婚
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="lnxiaoy">
-      <meta itemprop="description" content="">
-    </span>
+三亚酒店求婚，待规划
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="lalaland">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
+结婚
+
+5.8 细节详见number
+
+健身
+
+俯卧撑10*4组
+
+买房
+
+根据首付款和积分上限来综合考虑，现在倾向于虹桥、虹桥前湾、杨浦
+
+买车
+
+Volvo S60
+
+投资
+
+保持银行固守短债理财，停止基金投入，寻找潜力股股票
+
+刷题
+
+保持 ...
+        
+      </div>
+      <a class="more" href="/2022/02/13/2022/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2022/02/13/work/">工作</a>
+      </h2>
+      <p class="article-date">February 13, 2022</p>
+      
+      <div class="article-summary">
+        
+          2022年寻找新的工作机会，挑选产业和行业，进入一条快车道
+公司
+高通：软开，测试
+英特尔：基带
+苹果：开发
+小米：物理层算法
+zheku：wlan算法
+中兴：
+三星：13.5+2月年终奖+2.5加班费
+AMD：
+亚马逊：
+博通：
+乐鑫科技：wlan算法，iot
+中芯国际
+
+领域整理phy领 ...
+        
+      </div>
+      <a class="more" href="/2022/02/13/work/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2022/02/01/hunli/">婚礼筹备</a>
+      </h2>
+      <p class="article-date">February 1, 2022</p>
+      
+      <div class="article-summary">
+        
           
-            <a href="/2022/01/24/shuati/" class="post-title-link" itemprop="url">刷题总结</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-01-24 21:54:46" itemprop="dateCreated datePublished" datetime="2022-01-24T21:54:46+08:00">2022-01-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-13 18:01:27" itemprop="dateModified" datetime="2022-02-13T18:01:27+08:00">2022-02-13</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+        
+      </div>
+      <a class="more" href="/2022/02/01/hunli/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2022/02/01/baiduwiki/">百度网盘wiki</a>
+      </h2>
+      <p class="article-date">February 1, 2022</p>
+      
+      <div class="article-summary">
+        
+          后网盘时代下，大文件的分享和传递基本还是几大主流厂商来提供，百度，阿里等。目前阿里网盘使用人数不多，资源种类不够丰富，留着备用。百度网盘限速诟病已久，在工信部的要求下，仍然吃相难看（青春版三次下载机会，空间10G）。需要高级手段来方便自己下载，黑科技并不提倡，请大家支持正版。
+百度网盘
+油猴 ...
+        
+      </div>
+      <a class="more" href="/2022/02/01/baiduwiki/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2022/01/24/shuati/">刷题总结</a>
+      </h2>
+      <p class="article-date">January 24, 2022</p>
+      
+        
+  <a href="/tags#LeetCode" >
+    <span class="tag-code">LeetCode</span>
+  </a>
 
       
-          <p>目前进展98题 2022.1.24<br>目前进展139题 2022.2.13</p>
-<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><ol>
-<li>二分查找</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">while left &lt; right:</span><br><span class="line">    middle = (left + right) //2</span><br><span class="line">    if target &gt; nums[middle]:</span><br><span class="line">        left = middle + 1</span><br><span class="line">    elif target &lt; nums[middle]:</span><br><span class="line">        right = middle - 1</span><br><span class="line">    else:</span><br><span class="line">        return middle</span><br></pre></td></tr></table></figure>
+      <div class="article-summary">
+        
+          目前进展98题 2022.1.24目前进展139题 2022.2.13
+数组
+二分查找
 
-<ol start="2">
-<li>快慢指针</li>
-<li>滑动窗口<br>滑动窗口一般用来解决连续子序列问题，注意目标解是连续子序列，非连续问题需要考虑使用动态规划求解</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">for i in range(len(nums)):</span><br><span class="line">    sum_num += nums[i]</span><br><span class="line">    while sum_num &gt;= target:</span><br><span class="line">        sub = i - left + 1</span><br><span class="line">        res = min(res, sub)</span><br><span class="line">        sum_num -= nums[left]</span><br><span class="line">        left += 1</span><br></pre></td></tr></table></figure>
-
-<h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><ol>
-<li>虚拟头节点</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dummy = ListNode(0)</span><br><span class="line">dummy.next = head</span><br><span class="line">cur = dummy</span><br><span class="line">...</span><br><span class="line">return dummy.next</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>反转链表</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">pre = None</span><br><span class="line">cur = Head</span><br><span class="line"></span><br><span class="line">temp = cur.next</span><br><span class="line">cur.next = pre</span><br><span class="line"></span><br><span class="line">pre = cur</span><br><span class="line">cur = temp</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>环形链表</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">while fast and fast.next:</span><br><span class="line">    slow = slow.next</span><br><span class="line">    fast = fast.next.next</span><br><span class="line">    if slow == fast:</span><br><span class="line">        p = head</span><br><span class="line">        q = slow</span><br><span class="line">        while p != q:</span><br><span class="line">            p = p.next</span><br><span class="line">            q = q.next</span><br><span class="line">        return p</span><br><span class="line">return None</span><br></pre></td></tr></table></figure>
-
-<h3 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h3><ul>
-<li>数组：</li>
-<li>set：</li>
-<li>map：要维护红黑树或者符号表，而且还要做哈希函数的运算</li>
-</ul>
-<h3 id="单调栈"><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h3><ol>
-<li>查找滑动窗口内的最大值</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">win, ret = [], []</span><br><span class="line">for i, v in enumerate(nums):</span><br><span class="line">    if i &gt;= k and win[0] &lt;= i - k:</span><br><span class="line">        win.pop(0)</span><br><span class="line">    while win and nums[win[-1]] &lt;= v:</span><br><span class="line">        win.pop()</span><br><span class="line">    win.append(i)</span><br><span class="line">    if i &gt;= k - 1:</span><br><span class="line">        ret.append(nums[win[0]])</span><br><span class="line">return ret</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line">### 字符串</span><br><span class="line"></span><br><span class="line">KMP：KMP的主要思想是当出现字符串不匹配时，可以知道一部分之前已经匹配的文本内容，可以利用这些信息避免从头再去做匹配了</span><br><span class="line">    </span><br><span class="line">前缀表：起始位置到下标i之前（包括i）的子串中，有多大长度的相同前缀后缀</span><br><span class="line"></span><br><span class="line">`str.count(&#x27;#&#x27;)` 统计#个数</span><br><span class="line"></span><br><span class="line">```python3</span><br><span class="line">&quot;&quot;&quot;生成next数组</span><br><span class="line">def getnext(self,a,needle):</span><br><span class="line">    next=[&#x27;&#x27; for i in range(a)]</span><br><span class="line">    j,k=0,-1</span><br><span class="line">    next[0]=k</span><br><span class="line">    while(j &lt; len(needle)-1):</span><br><span class="line">        if k==-1 or needle[k]==needle[j]:</span><br><span class="line">            k+=1</span><br><span class="line">            j+=1</span><br><span class="line">            next[j]=k</span><br><span class="line">        else:</span><br><span class="line">            k=next[k]</span><br><span class="line">    return next</span><br><span class="line">&quot;&quot;&quot;匹配字符串</span><br><span class="line">a=len(needle)</span><br><span class="line">b=len(haystack)</span><br><span class="line">if a==0:</span><br><span class="line">    return 0</span><br><span class="line">i=j=0</span><br><span class="line">next=self.getnext(a,needle)</span><br><span class="line">while(i&lt;b and j&lt;a):</span><br><span class="line">    if j==-1 or needle[j]==haystack[i]:</span><br><span class="line">        i+=1</span><br><span class="line">        j+=1</span><br><span class="line">    else:</span><br><span class="line">        j=next[j]</span><br><span class="line">if j==a:</span><br><span class="line">    return i-j</span><br><span class="line">else:</span><br><span class="line">    return -1</span><br></pre></td></tr></table></figure>
-
-<h3 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h3><p>深度遍历、广度遍历和回溯一般用来解决路径搜索问题，深度遍历和广度遍历大家熟悉一种即可，一般来说，基于辅助队列的广度优先搜索在算法性能上比递归的深度优先搜索效率更高</p>
-<ol>
-<li>前序遍历、中序遍历、后序遍历 – 递归法</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">def inorderTraversal(self, root: TreeNode) -&gt; List[int]:</span><br><span class="line">    result = []</span><br><span class="line"></span><br><span class="line">    def traversal(root: TreeNode):</span><br><span class="line">        if root == None:</span><br><span class="line">            return</span><br><span class="line">        traversal(root.left)    # 左</span><br><span class="line">        result.append(root.val) # 中序</span><br><span class="line">        traversal(root.right)   # 右</span><br><span class="line"></span><br><span class="line">    traversal(root)</span><br><span class="line">    return result</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>层序遍历（广度优先遍历）– 迭代法</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">def averageOfLevels(self, root: Optional[TreeNode]) -&gt; List[float]:</span><br><span class="line">    res = []</span><br><span class="line">    stack = [root]</span><br><span class="line">    while stack:</span><br><span class="line">        mean = 0</span><br><span class="line">        count = 0</span><br><span class="line">        for _ in range(len(stack)):</span><br><span class="line">            node = stack.pop(0)</span><br><span class="line">            count += 1</span><br><span class="line">            mean += node.val</span><br><span class="line">            if node.left:</span><br><span class="line">                stack.append(node.left)</span><br><span class="line">            if node.right:</span><br><span class="line">                stack.append(node.right)</span><br><span class="line">        res.append(mean / count)</span><br><span class="line">    return res</span><br></pre></td></tr></table></figure>
-
-<p>总结：</p>
-<ol>
-<li>涉及到二叉树的构造，无论普通二叉树还是二叉搜索树一定前序，都是先构造中节点。</li>
-<li>求普通二叉树的属性，一般是后序，一般要通过递归函数的返回值做计算</li>
-<li>求二叉搜索树的属性，一定是中序了，要不白瞎了有序性了</li>
-</ol>
-<h3 id="回溯算法"><a href="#回溯算法" class="headerlink" title="回溯算法"></a>回溯算法</h3><p>回溯法常用于搜索，判断是否有解。本质是穷举，穷举所有可能，然后选出我们想要的答案。和广度优先搜索适用的场景不同，回溯一般用于判断是否有解，广深法用于求最优解 </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">void backtracking(参数) &#123;</span><br><span class="line">    if (终止条件) &#123;</span><br><span class="line">        存放结果;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    for (选择：本层集合中元素（树中节点孩子的数量就是集合的大小）) &#123;</span><br><span class="line">        处理节点;</span><br><span class="line">        backtracking(路径，选择列表); // 递归</span><br><span class="line">        回溯，撤销处理结果</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h3><p>贪心的本质是选择每一阶段的局部最优，从而达到全局最优。贪心没有状态推导，而是从局部直接选最优的，</p>
-<h3 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h3><p>动态规划中每一个状态一定是由上一个状态推导出来的</p>
-<pre><code>模板：
-1. 确定dp数组（dp table）以及下标的含义
-2. 确定递推公式
-3. dp数组如何初始化
-4. 确定遍历顺序
-5. 举例推导dp数组
-</code></pre>
-<ol>
-<li>1背包</li>
-</ol>
-<p>01背包的递推公式为：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dp[j] = max(dp[j], dp[j - weight[i]] + value[i]);</span><br></pre></td></tr></table></figure>
-
-<p>如果使用一维dp数组，物品遍历的for循环放在外层，遍历背包的for循环放在内层，且内层for循环<strong>倒序遍历</strong>！</p>
-<p>在求装满背包有几种方法的情况下，dp[0] 初始化为1，递推公式一般为</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dp[j] += dp[j - nums[i]];</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>完全背包</li>
-</ol>
-<p>物品数量无限多</p>
-<p>背包容量从小到大去遍历</p>
-<p>如果求组合数就是外层for循环遍历物品，内层for遍历背包。</p>
-<p>如果求排列数就是外层for遍历背包，内层for循环遍历物品。需要判断背包空间大小是否容得下当前物品</p>
-<ol start="3">
-<li>多重背包</li>
-</ol>
-<p>可以在循环内增加单类物品个数的循环，转化为01背包问题</p>
-<p>总结：</p>
-<ul>
-<li>问能否能装满背包（或者最多装多少）：dp[j] = max(dp[j], dp[j - nums[i]] + nums[i]); </li>
-<li>问装满背包有几种方法：dp[j] += dp[j - nums[i]] </li>
-<li>问背包装满最大价值：dp[j] = max(dp[j], dp[j - weight[i]] + value[i]); </li>
-<li>问装满背包所有物品的最小个数：dp[j] = min(dp[j - coins[i]] + 1, dp[j]); </li>
-</ul>
-<ol start="4">
-<li><p>打家劫舍</p>
-</li>
-<li><p>买卖股票</p>
-</li>
-</ol>
-<p>分析清楚当前有几种状态<br>将买、卖、冷冻，降维成两个维度：持有股票和未持有股票<br>可以通过手写，确定下逻辑关系</p>
-<ol start="6">
-<li>子序列问题</li>
-</ol>
+12345678while left &lt; right:    middle = (left + right) //2    if target &gt; nums[middle]:         ...
+        
+      </div>
+      <a class="more" href="/2022/01/24/shuati/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2022/01/24/freedowm/">提升自己</a>
+      </h2>
+      <p class="article-date">January 24, 2022</p>
+      
+        
+  <a href="/tags#提升自己" >
+    <span class="tag-code">提升自己</span>
+  </a>
 
       
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
+      <div class="article-summary">
+        
+          现在的信息社会变更很快，产品层出不穷，来抢占你的眼球，来抢占你的时间。信息都是加工好的，来喂给你，大部分没有深度，在你还没消化好时，下一个消息又来占据了你的大脑，久而久之，我发现注意力不能集中半小时了，看书也不能完全投入进去，思考方式也变得浅尝辄止，知道这是个啥，却讲不清楚。
+网友在《黑客帝 ...
+        
+      </div>
+      <a class="more" href="/2022/01/24/freedowm/">Read more</a>
+    </article>
   
-  
-  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2022/01/24/maifang/">上海买房.md</a>
+      </h2>
+      <p class="article-date">January 24, 2022</p>
+      
+        
+  <a href="/tags#买房" >
+    <span class="tag-code">买房</span>
+  </a>
 
       
+      <div class="article-summary">
+        
+          2022年买房从网上的购房思路开始看，目前半月有余，准备从以下几点按照优先级来考虑买房
+新见解城市不能无限扩大，资源是有限的，所以北京会把一部分职能中心，一部分制造业（应环保要求）剥离到廊坊地区。上海也是同样的道理，在外环外重点投资五大新城，临港承载着设计+制造的重担。买房的话尽量避开五大新 ...
+        
+      </div>
+      <a class="more" href="/2022/01/24/maifang/">Read more</a>
+    </article>
   
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2021/12/22/backforward-2021/">2021年终总结</a>
+      </h2>
+      <p class="article-date">December 22, 2021</p>
+      
+      <div class="article-summary">
+        
+          是时候回顾下这一年来的所得所失，看看年初的承诺兑现了多少，看看明年的计划需要如何设立
+2021关键词互联网是没有记忆的，每过一段时间总会有旧事重提，今年的网络热词有没有勾起你的记忆（排除抖音等没有深度的词）
+躺平 YYDS 破防 元宇宙 觉醒年代 双减 工具人 小丑竟是我自己 反诈 中国人不 ...
+        
+      </div>
+      <a class="more" href="/2021/12/22/backforward-2021/">Read more</a>
+    </article>
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/24/freedowm/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="lnxiaoy">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="lalaland">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/24/freedowm/" class="post-title-link" itemprop="url">提升自己</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-01-24 21:43:40 / Modified: 21:54:14" itemprop="dateCreated datePublished" datetime="2022-01-24T21:43:40+08:00">2022-01-24</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2021/11/15/RTT/">我与RTT的这三年</a>
+      </h2>
+      <p class="article-date">November 15, 2021</p>
+      
+        
+  <a href="/tags#工作" >
+    <span class="tag-code">工作</span>
+  </a>
 
       
-          <p>现在的信息社会变更很快，产品层出不穷，来抢占你的眼球，来抢占你的时间。信息都是加工好的，来喂给你，大部分没有深度，在你还没消化好时，下一个消息又来占据了你的大脑，久而久之，我发现注意力不能集中半小时了，看书也不能完全投入进去，思考方式也变得浅尝辄止，知道这是个啥，却讲不清楚。</p>
-<p>网友在《黑客帝国4》的影评里写着</p>
-<blockquote>
-<p>电影在不停的地告诉观众：这些年你们在荧屏上，互联网上看到的基本都是垃圾，这些垃圾在不断侵蚀着你的大脑，让你分不清什么是真实，甚至此时此刻正在看这部电影的你也是如此，我太了解你们了，你们其实根本不期待“惊喜”，根本不期待“自由”，“自由”就是假象，你们喜欢被“控制”，新瓶装个旧酒，你们就跟嗑药了似的，你们就是贱!</p>
-</blockquote>
-<ol>
-<li><p>你真的想提升自己，你最应该做的是长期专注于一件事，把它打磨成你的代表作</p>
-</li>
-<li><p>不要随波逐流，人云亦云，没有深度思考的能力</p>
-</li>
-<li><p>不要讨好别人，不要妥协，有时需要坚定立场</p>
-</li>
-<li><p>事情赶早不赶晚，把简单的事情尽早完成</p>
-</li>
-</ol>
-<p>推荐几个B站的UP，《冲浪普拉斯》、《马督工》、《国仁大讲堂》</p>
+      <div class="article-summary">
+        
+          已转岗3个月，特写下这篇文章，总结了3年的工作经历和态度变化，待之后回顾这段时间的心态和做出的选择。
+工作经历由于本人有一年的社会工作经历，这个经历需要后面单独写一写了。
+进入部门后先后从事了数据比对、外场问题联调、性能定标、算法方案分析，路线还算清晰，但并不是每件事情做完就结束了，它时时刻 ...
+        
+      </div>
+      <a class="more" href="/2021/11/15/RTT/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2021/11/08/ICT/">ICT算法大赛</a>
+      </h2>
+      <p class="article-date">November 8, 2021</p>
+      
+        
+  <a href="/tags#负载均衡" >
+    <span class="tag-code">负载均衡</span>
+  </a>
 
       
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
+      <div class="article-summary">
+        
+          ICT比赛初赛告一段落，在前64只队伍里以35名的成绩晋级复赛，可喜可贺，从比赛开始到结束，经历了几个阶段
+初始选择根据给定的job，从前到后顺序排序，目的是扫除环境、代码的一些障碍，减少低级错误。 在早期凭借兴趣搞得比较有动力，队伍不多，名词在40名左右
+按照job大小排序根据job大小和 ...
+        
+      </div>
+      <a class="more" href="/2021/11/08/ICT/">Read more</a>
+    </article>
   
 
-      
+  
+    <div class="guide-pager">
+  
+    <a class="unvisible" href="/"><span class="page-arrow">←</span> Prev</a>
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/24/maifang/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="lnxiaoy">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="lalaland">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/24/maifang/" class="post-title-link" itemprop="url">上海买房.md</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-01-24 21:10:40" itemprop="dateCreated datePublished" datetime="2022-01-24T21:10:40+08:00">2022-01-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-13 18:02:23" itemprop="dateModified" datetime="2022-02-13T18:02:23+08:00">2022-02-13</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="2022年买房"><a href="#2022年买房" class="headerlink" title="2022年买房"></a>2022年买房</h3><p>从网上的购房思路开始看，目前半月有余，准备从以下几点按照优先级来考虑买房</p>
-<h4 id="新见解"><a href="#新见解" class="headerlink" title="新见解"></a>新见解</h4><p>城市不能无限扩大，资源是有限的，所以北京会把一部分职能中心，一部分制造业（应环保要求）剥离到廊坊地区。上海也是同样的道理，在外环外重点投资五大新城，临港承载着设计+制造的重担。买房的话尽量避开五大新城<br>外环15km内，避开远郊坑盘<br>楼层在5-8楼，&gt;10层有扬尘<br>回家搜索下廊坊地区定位<br>上海五大新城目标定位</p>
-<ol>
-<li>颛桥紫薇花园，xxxx</li>
-<li>徐汇南</li>
-<li>虹桥/徐泾：蟠龙天地</li>
-</ol>
-<h4 id="买房思路"><a href="#买房思路" class="headerlink" title="买房思路"></a>买房思路</h4><ol>
-<li>选地段</li>
-</ol>
-<p>主城区 &gt; 五大新城（嘉定、青浦、松江、奉贤、南汇）<br>向西不超过G2京沪高速，向南不超过S20外环<br>中央活动区<br>内圈：真如，古北，漕河泾，花木-龙阳路，<br>中圈：虹桥，莘庄，张江，金桥，五角场<br>中圈小镇中心：江桥，真北，七宝，御桥，大宁，桃浦</p>
-<p>大虹桥、联洋、世纪公园；陆家嘴、张江、新江湾城；漕河泾、紫竹、徐汇滨江；最后再加一个徐泾。</p>
-<ol start="2">
-<li>选接盘侠</li>
-</ol>
-<p>选择高科技产业、高附加值产业园区所在的区，这样区内人群购买力有一定保障</p>
-<ol start="3">
-<li>周边配套</li>
-</ol>
-<p>考虑房子的附加值，需要周边有大型商场、大型超市、社区、医院、公园、地铁、小学。</p>
-<ol start="4">
-<li>兼顾学区</li>
-</ol>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/459304246">新！上海16区重点小学梯队排名出炉！2022年升学在即，建议家长们收藏！</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
+    <a href="/page/2/">Next<span class="page-arrow"> →</span></a>
   
+</div>
   
-  
+</main>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/22/backforward-2021/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="lnxiaoy">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="lalaland">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/12/22/backforward-2021/" class="post-title-link" itemprop="url">2021年终总结</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-12-22 22:00:44" itemprop="dateCreated datePublished" datetime="2021-12-22T22:00:44+08:00">2021-12-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-01-05 21:10:05" itemprop="dateModified" datetime="2022-01-05T21:10:05+08:00">2022-01-05</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2022 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a target="_blank" rel="noopener" href="https://github.com/yanm1ng">yanm1ng</a>
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>是时候回顾下这一年来的所得所失，看看年初的承诺兑现了多少，看看明年的计划需要如何设立</p>
-<h3 id="2021关键词"><a href="#2021关键词" class="headerlink" title="2021关键词"></a>2021关键词</h3><p>互联网是没有记忆的，每过一段时间总会有旧事重提，今年的网络热词有没有勾起你的记忆（排除抖音等没有深度的词）</p>
-<p>躺平 YYDS 破防 元宇宙 觉醒年代 双减 工具人 小丑竟是我自己 反诈 中国人不骗中国人 废话文学</p>
-<h3 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h3><p>这一年工作上，从年初一直投入在87的性能仿真上，随着人员的流失，团队由四个人变成了我一个人，后续还完成了芯片的业务验证和性能验证。从结果来看，并没有即时激励和项目奖励，属于完成了一个吃力不讨好的活。</p>
-<p>后3个月换了一个新的部门，走之前部门挽留了下，给加了2K。新的部门不需要细致到具体的资源计算，只要给出足够的价值点就可以，一个idea可以吃半年，2个idea可以吃一年，前提是这些idea都是通过试错试出来的，可以拿上台面讲的东西。</p>
-<p>职级没有变化，争取明年升一级，并且配股，看自己努力和机遇了。</p>
-<h3 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h3><p>生活上逐渐步入正轨，家里买了石锅、透明的空气炸锅、康宁的玻璃锅，买了新的拖把，干净利索就是目前的状态。房租还是6K一个月，79平两室两厅，感受上足够温饱，时间越长便越想住新房。</p>
-<p>明年妹子就可以落户了，本来想着落户前领个证，走随迁，但是疫情最近有点严重，想着就不要乱走了，我老老实实排着公司的人才落户吧。今年年底很争气，车牌摇到了，6k+90900的费用，还算划算，车目前看中了窝窝的S60，一年之内把你开回家。</p>
-<p>明年5月份左右就可以买房了，所以房子可以提前看起来了。目前主要的动作还是攒钱，只有攒的多了，首付多了，可以选择的范围才会多，还是多挣钱吧。目前看房的渠道主要在小胖看房的公众号里。</p>
-<h3 id="个人提升"><a href="#个人提升" class="headerlink" title="个人提升"></a>个人提升</h3><p>身材：这一年个人身材没有走形，又续了两年的健身卡。</p>
-<p>读书：读了半本书，收藏了几本待看的。</p>
-<p>旅游：去了一次千岛湖</p>
-<p>总的来说只是明白了这个年纪该懂的道理，对一般的事情都有了基于经验上的判断，有些事情有先入为主的情绪，用我爸的话来说，就是知识分子的自以为是。妹子总提醒说要做学历提升，去读个博士，但是现在还没想好，或者说不愿意放弃手头的收入，这个事情想要有收益，需要投入的时间比较长，暂时没有得出性价比。</p>
-<h3 id="大趋势变化"><a href="#大趋势变化" class="headerlink" title="大趋势变化"></a>大趋势变化</h3><h3 id="2022计划"><a href="#2022计划" class="headerlink" title="2022计划"></a>2022计划</h3><ol>
-<li>健身要有肌肉</li>
-<li>买房</li>
-<li>买车</li>
-<li>结婚</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/15/RTT/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="lnxiaoy">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="lalaland">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/15/RTT/" class="post-title-link" itemprop="url">我与RTT的这三年</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-11-15 22:11:56" itemprop="dateCreated datePublished" datetime="2021-11-15T22:11:56+08:00">2021-11-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-12-19 18:46:06" itemprop="dateModified" datetime="2021-12-19T18:46:06+08:00">2021-12-19</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>已转岗3个月，特写下这篇文章，总结了3年的工作经历和态度变化，待之后回顾这段时间的心态和做出的选择。</p>
-<h3 id="工作经历"><a href="#工作经历" class="headerlink" title="工作经历"></a>工作经历</h3><pre><code>由于本人有一年的社会工作经历，这个经历需要后面单独写一写了。
-进入部门后先后从事了数据比对、外场问题联调、性能定标、算法方案分析，路线还算清晰，但并不是每件事情做完就结束了，它时时刻刻在干扰着你，让你回顾历史方案，回顾历史性能，比较心累。另一方面，随着人员流动，上面的位置空了出来却发现自己在这个框架和体制下并没有发展空间了。所以选择了转岗，目前只负责一个方向的事情，做完了就可以传递到下一个环节，自己可以投身到其他领域上继续工作了。
-</code></pre>
-<h3 id="存在的问题"><a href="#存在的问题" class="headerlink" title="存在的问题"></a>存在的问题</h3><pre><code>这一部分主观意见比较多，也是和同事讨论了几次汇总下来的。
-</code></pre>
-<ol>
-<li>绩效导向不明确<br> RTT本应是一个交付组织，可以交付版本上的事情，可以把芯片上的事情汇总分析，但却把一部分研究的事情承担了起来。这部分事情一方面是交付过程中发现的，可以通过调整实现过程中的细节做到的；一方面是外部需求输入，需要配合在版本和样机中验证的；另一方面是给自己找的KPI，如果减少复杂度、提高接收端信噪比之类的。本身三方面都可以做，但是要有轻有重，根据比例来做绩效导向。但是现实是我们需要支撑老大的绩效，老大的绩效里并没有一项是保证版本交付质量的实施细节，更多的反而是每年性能10%，容量10%，覆盖10%等等的任务令和断裂点。这样的话，员工在下面做的细枝末节的工作并没有呈现，也没有得到认可。由此可见也没有正向的激励循环。</li>
-<li>人员短缺<br> 在部门的梯队建设方面，内忧外患。外部们的需求较多，基本是一人负责一个，AB版本轮一次或者组与组之间轮一次。在RTT内部基本就是一个人扛着外面一个组的压力，老大居然还认为这是很正常的事情，不可理解。这直接导致了你工作时间的拉长，工作方向的增多，细枝末节的事情繁冗复杂，时间长了不堪重负。并且随着人员的流动，骨干人员越来越少，工作交接下来的事情越来越多，直接进入一个倒退的循环。</li>
-<li>压力下发，层层加码<br> 很多时候涉及版本过点，压力传递到部门内部的时候并没有专家或者主管出来“消消毒”，说这可以怎么怎么分析，你们内部可以先闭环之类的。尤其到芯片版本阶段，性能扣的很细，但并没有什么卵用。一个很形象的例子是，你在干活，前面众多老大的意见是abcd好几个方向，你不知道哪个对，都需要时间来验证；屁股后面是版本经理催着、大版本经理通报着、邮件吵架着；上面是你想落这个方案，你想做这个决策的天花板，他不让你自己决定，让你花一天时间来写报告汇报，让老大的老大来拍。总而言之除了时间上的付出导致身体疲惫，还有心里上的压抑，一声声叹气都缓解不了的压抑。</li>
-<li>氛围封闭，工具封闭<br> 本来身为交付环节中的一环，却只能埋头苦干，没有途径也没有机会接触一些新鲜算法、新颖的思路。代码在红区运行，性能和工具也只在部门内部互相传递，方案交流更多的时间表现为了自己人在打自己人。</li>
-</ol>
-<h3 id="一些想法"><a href="#一些想法" class="headerlink" title="一些想法"></a>一些想法</h3><ol>
-<li>光环<br> 在一个垂直行业较深的领域，有一个较高的学历、有一个资深的研究背景、有一个口碑较好的老板，在工作的时候都会使得你有一个光环，这个光环可以让你起步比别人快一些，在别人或者老大的印象里更深刻一些。如果想公平竞争的话，就得考虑一些其他行业，不是高精尖技术领域的，不需要太多的技术积累的，不需要太多经验沉淀的行业。相比较而言，这些行业普遍是短期热门，但比较容易乘上快车，实现原始的财富积累。老一辈人说的“越老越吃香”的行当可能就是前者吧。</li>
-<li>标签<br> 团队中或者平时交往中，总会发现有些人是舆论的中心，言论的焦点，信息的源头和传播者，往往这些人也具有一定的人格魅力和各式各样的标签，比如：爱吃炸鸡、C语言专家等等。有时候可以刻意塑造下这种形象，可以引来更多的关注，或者更多的机会，或者更多的朋友。</li>
-<li>跨界<br> 现在这个社会打败你的往往不是同行，而是跨界。我可以是唱歌行业里最懂相声的，也可以是相声行业里最懂唱歌的，虽然都不是强项，但在不同的圈子里还是可以露脸的。</li>
-<li>冒险<br> 年轻的时候还是值得去冒险，值得去尝试一些有风险的事情。因为现在的年纪本身负担小、走弯路代价小，总体来说可以承受起。</li>
-<li>人不能太“老实”<br> “老实”的意思是不能按部就班，别人安排给你啥就做啥，别人脏活累活扔给你也不反抗，这样他欺负你一次，就有第二次，时间长了就变成人下人了。另一方面是不能被动，不能只知道低头做事情，要用你的长处来展现自己，哪怕只是文档写的好，那也能证明你调理清楚，思路清晰。还要抬头看看路，现在的社会不是一成不变的，是朝令夕改的，你需要识别身边变化的信息和要素，这些都是用来给你做出判断的依据</li>
-<li>要多思考，多往前思考<br> 就这么一句话。</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/08/ICT/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="lnxiaoy">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="lalaland">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/08/ICT/" class="post-title-link" itemprop="url">ICT算法大赛</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-11-08 21:50:42" itemprop="dateCreated datePublished" datetime="2021-11-08T21:50:42+08:00">2021-11-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-12-19 18:47:53" itemprop="dateModified" datetime="2021-12-19T18:47:53+08:00">2021-12-19</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>ICT比赛初赛告一段落，在前64只队伍里以35名的成绩晋级复赛，可喜可贺，从比赛开始到结束，经历了几个阶段</p>
-<h4 id="初始选择"><a href="#初始选择" class="headerlink" title="初始选择"></a>初始选择</h4><p>根据给定的job，从前到后顺序排序，目的是扫除环境、代码的一些障碍，减少低级错误。 在早期凭借兴趣搞得比较有动力，队伍不多，名词在40名左右</p>
-<h4 id="按照job大小排序"><a href="#按照job大小排序" class="headerlink" title="按照job大小排序"></a>按照job大小排序</h4><p>根据job大小和运行结果的时间图来紧凑排序，优先耗时较大的job，没有考虑非均匀的job分配</p>
-<p>以最小耗时为准则，迭代收敛job资源规划</p>
-<p>后面考虑参数寻优和增加其他维度的约束准则</p>
-<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p>第一名选择了使用二叉树+小范围聚类算法来做资源的负载均衡</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
-
-
-
-          </div>
-          
+  </p>
+</footer>
 
 <script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
   }
 </script>
+<script>
+  async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
 
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          Table of Contents
-        </li>
-        <li class="sidebar-nav-overview">
-          Overview
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">lnxiaoy</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">12</span>
-          <span class="site-state-item-name">posts</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">5</span>
-        <span class="site-state-item-name">tags</span>
-      </div>
-  </nav>
-</div>
+<script>
+  var hasLine = 'true';
+  async("//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      hljs.configure({useBR: true});
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
 
 
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
+<script src="/js/script.js"></script>
 
 
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2022</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">lnxiaoy</span>
-</div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
-  </div>
-
-        
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
-
-  
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/muse.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-</body>
+  </body>
 </html>
