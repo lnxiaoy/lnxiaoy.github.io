@@ -8,12 +8,13 @@ subtitle: ''
 description: ''
 keywords:
 author: lnxiaoy	 
-language: en
+language: zh-CN 
 timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://lnxiaoy.github.io/project 
+url: https://lnxiaoy.github.io/lnxiaoy.github.io/
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -97,7 +98,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: butterfly # vexo #next #landscape
+theme: butterfly 
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
