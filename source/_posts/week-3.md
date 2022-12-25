@@ -1,5 +1,5 @@
 ---
-title: week-3
+title: 【第三期周报】经济下行
 date: 2022-05-16 10:12:51
 tags:
 categories:
@@ -16,5 +16,5 @@ cover: https://cdn.jsdelivr.net/gh/lnxiaoy/hexo_img@main/hexo-img/flatlay-office
 5. 齐马蓝、时间地图
 6. 合同续签、3级资格认证
 7. 芬兰、瑞典申请加入北约
-8. 融创金融城部分地块暴雷，监管资金被挪用了
+8. 融创金融城部分地块暴雷，监管资金未开辟账户，首付款被挪用
 9. 南京放松限购第一枪被按住了
